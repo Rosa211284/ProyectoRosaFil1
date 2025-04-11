@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    background-image: url("/img/fodorosa.jpg");
+}
+
+#logo {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logo img {
+    height: 60px;
+}
+
+#logo a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+#tarjeta {
+    text-align: center;
+    padding: 40px 20px;
+    color: #f9f9f9;
+    
+}
+
+#fondoCon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    padding: 30px;
+    max-width: 500px;
+}
+
+#fondoCon img {
+    margin-top: 20px;
+    border-radius: 50px;
+    width: 100%;
+    max-width: 300px;
+}

@@ -1,0 +1,100 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('../img/f2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    
+}
+p{
+    text-align: center;
+}
+
+/* Estilo para el contenedor principal */
+.contenedor {
+    background-color: rgba(0, 0, 0, 0.6); 
+    padding: 30px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 400px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+   
+}
+img{
+    justify-content: center;
+}
+
+/* Título del formulario */
+
+.contenedor p{
+   text-align: center;
+   
+}
+
+/* Estilo  formulario */
+.campo {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.campo label {
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.campo input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Estilo para el botón */
+button {
+    width: 90%;
+    padding: 10px;
+    font-size: 1.2rem;
+    background-color: #4eacff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+/*-cambio de colore-*/
+button:hover {
+    background-color: #003caa; 
+}
+
+button:focus, input:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.6);
+}
+
+/*-------------------efectos---------------------*/
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
