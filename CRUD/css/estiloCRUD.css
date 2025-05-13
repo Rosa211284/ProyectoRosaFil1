@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+    min-height: 100vh;
+    background-image: url("../img/fondoapi.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ddd;
+    font-style: italic;
+}
+
+.container {
+    width: 50%;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: white;
+    color: #000000;
+    opacity: 0.9;
+    overflow-x: auto;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+form {
+    margin-top: 20px;
+}
+
+i {
+    margin-right: 5px;
+}
+
+#boton {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#boton a {
+    display: inline-block;
+    background-color: #4354d7;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#boton a:hover {
+    background-color: #030063;
+}
+
+p, h1 {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 30px;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+/* ADAPTACIÓN RESPONSIVA */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    table, th, td {
+        font-size: 14px;
+    }
+
+    p, h1 {
+        font-size: 18px;
+    }
+
+    #boton a {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    table, th, td {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    p, h1 {
+        font-size: 16px;
+    }
+
+    #boton a {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}

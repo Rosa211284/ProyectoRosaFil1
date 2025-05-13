@@ -1,280 +1,275 @@
 * {
     margin: 0;
-    padding: 0%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 0;
+    box-sizing: border-box;
     text-align: center;
-   
+    
 }
 
+  
 html, body {
     width: 100%;
     height: 100%;
+    background-color: #f9f9f9;
+    color: #333;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-
+/*---------- Logo/Header ----------*/
 #logo {
-    background-color: #40e0d0;
-     font-size: 14px;
-    display: flex;
-    align-items: center;
-    padding: 0 20px; 
+  background-color: #008080;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
-#logo img {
-    height: auto;
+/* Logo a la izquierda */
+#logo-img img {
+  height: 50px;
+}
+
+/* Menú a la derecha */
+#menu {
+  display: flex;
+  gap: 20px;
+   
+   
 }
 
 #logo a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+#logo a:hover {
+  color: #ffb01f;
+}
+
+/* Botón hamburguesa oculto en escritorio */
+#hamburger {
+  display: none;
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+
+@font-face {
+    font-family: 'Fuente1';
+    src: url('/Font/adelia.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Fuente2';
+    src: url('/Font/Hello.ttf') format('truetype');
+}
+
+/*------------fondo de pantalla-----------*/
+.solo-pc {
+  display: block;
+}
+
+.solo-movil {
+  display: none;
+}
+
+
+/*---------- Sección Temporadas ----------*/
+.temporadas {
+    background-color: #6ec5b8;
     color: white;
-    text-decoration: none;
-    margin-left: 15px;
+    font-size: 2rem;
+    padding: 20px 0;
+    font-weight: 600;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    font-family: 'Fuente2', sans-serif;
 }
 
-#logo div {
-    margin-left: auto;
-}
-
-.no-underline {
-        text-decoration: none;
-        color: #ffffff;
-        margin-right: 30px;
-        font-weight: bold;
-}
-
-.temporadas{
-    background-color: #40e0d0;
-    color: #ffffff;
-    font-size: 20px;
-} 
-
-/*------Carrusel 7w7-----*/
+/*---------- Carrusel ----------*/
 .carousel-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    overflow: hidden;
     position: relative;
-    width: 95%;
     margin: auto;
+  }
+  
+  .carousel-wrapper {
     overflow: hidden;
-}
-.carousel-wrapper {
     width: 100%;
-    overflow: hidden;
-}
-.carousel {
+  }
+  
+  .carousel {
     display: flex;
-    transition: transform 0.5s ease-in-out;
-    gap: 40px;
-    width: 90%;
-}
-.carousel a {
-   
-    flex-shrink: 0;
-    text-decoration: none;
-}
-.carousel img {
+    transition: transform 0.5s ease;
+  }
+  
+  .item-carousel {
+    flex: 0 0 100%;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .item-carousel img {
     width: 100%;
-    transition: transform 0.3s, box-shadow 0.3s, margin 0.3s;
-    width: 350px;
-    height: 500px;
-}
-.carousel img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    margin: -10px;
-}
+    height: 600px;
+    
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+
 .prev, .next {
     position: absolute;
-    top: 60%;
-    transform: translateY(-40%);
-    background-color: rgba(0, 0, 0, 0.5);
+    top: 40%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
+    padding: 12px 18px;
     cursor: pointer;
-    padding: 10px;
-    z-index: 10;
+    z-index: 2;
+    font-size: 18px;
 }
-.prev { left: 20px; }
-.next { right: 20px; }
 
-/* Estilos para el slider */
-.slider-container {
-    width: 60%;
-    margin: 20px auto;
+.item-carousel p {
+    margin-top: 8px;
+    font-size: 20px;
+    color: #444;
+    font-style: italic;
+  }
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+  
+
+/*-------Tarjeta base-----------*/
+.tarjeta, .tarjeta2 {
+    width: 250px;
+    background-color: #ffb01f;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
     overflow: hidden;
-    position: relative;
-}
-.slider {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
-    transition: transform 1s ease-in-out;
-}
-.slider img {
-    width: 100%;
-    flex-shrink: 0;
+    flex-direction: column;
+    justify-content: space-between;
+   
 }
 
-/*---------especies-----------*/
+/*----Hover general--------------*/
+.tarjeta:hover, .tarjeta2:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+     transform: translateY(-5px);
+    box-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.5),
+        0 0 20px rgba(0, 255, 255, 0.4),
+        0 0 30px rgba(0, 255, 255, 0.3);
+    
+}
+
+/*---Imagen de la tarjeta------------------*/
 .especies {
-    padding-top: 2%;
     display: flex;
-    flex-direction: row; 
-    gap: 10px; 
-    padding-left: 2%;
-    transition: transform 0.3s ease, box-shadow 0.5s ease;
-    
-    
-}
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 5%;
+    box-sizing: border-box;
+   
 
-.tarjeta {
-    width: 20%; 
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 10px;
-    display: flex; 
-    display:inline;
-    background-color: #404040;
-   
-   
-   
-}
-
-.tarjeta img {
-    width: 500px;
+  }
+  
+  .tarjeta2 {
+    width: 200px;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .tarjeta2 img {
+    width: 70%;
     height: auto;
     border-radius: 8px;
-    margin-right: 20px; 
-    float: left;
-}
-
-
-
-.tarjeta h2 {
-    margin: 0;
-    font-size: 2em; 
-    padding-top: 5%;
-    padding-bottom: 1%;
-}
-
-.tarjeta p {
-    font-size: 0.9em;
-    color: #555;
+  }
+  
+  .tarjeta2 h2 {
     margin-top: 10px;
-    text-align: left;
-    
-}
-
-/* Efecto hover */
-.tarjeta:hover {
-    transform: scale(1.05); 
-    box-shadow: 0 0 20px rgba(126, 126, 126, 0.7); 
-}
+    font-size: 1.2rem;
+    color: #ffffff;
+  }
+  
+  .tarjeta2:hover {
+    transform: scale(1.05);
+  }
 
 
-/*------------------------------------------*/
 
-.tarjeta2:hover {
-    transform: scale(1.05); 
-    box-shadow: 0 0 20px rgba(126, 126, 126, 0.7); 
-}
-
-/* Estilo del video */
-.tarjeta2 iframe {
-    width: 60%; 
-    aspect-ratio: 16 / 9; 
-    border-radius: 8px;
-    margin-right: 20px; 
-    float: left;
-}
-.tarjeta2 {
-    width: 20%; 
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 10px;
-    display: flex; 
-    display:inline;
-    height: 530px;
-   
-}
-.tarjeta2 h2 {
-    margin: 0;
-    font-size: 2em; 
-    padding-top: 5%;
-    
-}
-
-.tarjeta2 p {
-    padding-top: 20px;
-    font-size: 1.0em;
-    color: #555;
-    margin-top: 10px;
-    padding-bottom: 1%;text-align: center;
-    
-}
-
-
-/*------------personas--------------*/
-.personas{
-    padding-top: 40px;
-    padding-bottom: 50px;
+/*---------- Maestros espacio ----------*/
+.personas {
     display: flex;
-    justify-content: center;
-    gap: 60px;
-    
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;  
+    margin-top: 20px;
+    padding: 5%;
 }
-.personas img{
-   width: 350px;
-   height: 350px;
-}
+
 .imagen-container {
     position: relative;
-    display: inline-block;
-    overflow: hidden;
+    width: calc(25% - 20px); 
+    height: 250px;  
+    overflow: hidden; 
 }
 
 .imagen-container img {
-    width:300px;
-    transition: opacity 0.4s ease-in-out;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
 }
 
-.imagen-container:hover img {
-    opacity: 0.3; 
-}
 
-/* Texto dentro */
 .info-hover {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 50%;  
+    left: 50%; 
+    transform: translate(-50%, -50%); 
     color: white;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px 20px;
-    border-radius: 5px;
-    opacity: 0;
-    transition: opacity 0.4s ease-in-out;
-    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
     font-size: 18px;
-    font-family: Arial, sans-serif;
+    text-align: center;
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
 }
 
 .imagen-container:hover .info-hover {
-    opacity: 0.5; 
+    opacity: 1; 
 }
 
-/* Información debajo de la imagen */
-.info-abajo {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 16px;
-    color: #333;
-}
-
-/*----------------slider---------*/
-/* Estilos para el slider */
+/*---------- Slider ----------*/
 .slider-container {
     width: 600px;
     height: 700px;
-    margin: 20px auto;
+    margin: 40px auto;
     overflow: hidden;
     position: relative;
 }
@@ -286,38 +281,657 @@ html, body {
 .slider img {
     width: 600px;
     height: 700px;
-    flex-shrink: 0;
+    object-fit: cover;
 }
-/*-------------Personas2-----------*/
-.personas2{
-    padding-top: 40px;
-    padding-bottom: 50px;
+
+
+/*---------- Fundaciones ----------*/
+
+#fundaciones {
+    padding: 5%;
+    display: flex;
+    background-color: #333;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap:5% ;
+    box-sizing: border-box;
+  }
+  
+  #fundaciones img {
+    max-width: 150px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: transform 0.3s ease;
+  }
+  
+  #fundaciones img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+  }
+
+/*-----------------------maestros----------*/
+.biografia {
+    display: flex;
+    gap: 40px;
+    padding: 60px 10%;
+    background-color: #f9f9f9;
+    flex-wrap: wrap;
+  
+}
+
+.biografia img {
+    width: 600px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+.biografia .texto {
+    flex: 5;
+
+}
+.biografia .texto h2 {
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #40e0d0;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.biografia .infoMaestros {
+    margin-bottom: 25px;
+}
+
+.biografia .infoMaestros p {
+
+    color: #555;
+    margin: 0;
+}
+/*----------------------Division informacion---------------------------------------------*/
+
+.infoDonato {
+    padding: 2rem;
+    background-color: #f9f9f9;
+  }
+ 
+  
+  .infoDonato-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .infoDonato-container img {
+    max-width: 40%;
+    border-radius: 10px;
+    flex: 1 1 400px;
+    object-fit: cover;
+  }
+  
+  .contenido-limpio {
+    flex: 1 1 400px;
+  }
+  
+  .contenido-limpio h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .contenido-limpio p {
+    line-height: 1.7;
+    font-size: 1rem;
+    color: #444;
+    text-align: left;
+  }
+/*---------------Slider Rosa Filarmonia --------------------------*/
+#slider{
+    width: 100%;
+    max-width: 1800px;
+    height: 90px;
+    background-image: url(../img/slider.png);
+    background-size: 100% 100%;
+    animation: slider 50s infinite linear;
+    position: relative; 
+    z-index: 1;
+    padding-bottom: 20px;
+}
+@keyframes slider{
+    to{background-position: 1200px;}
+}
+
+
+
+/*---------------------------objetivos y vision---------------------------*/
+#objetivos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto; /* centra horizontalmente */
+  padding: 2rem;
+  max-width: 900px;
+  width: 100%;
+}
+
+
+#objetivos img {
+    width: 200px;             
+    height: auto;               
+    object-fit: contain;       
+    image-rendering: auto;      
+    filter: grayscale(100%);
+    transition: filter 0.3s;
+}
+
+#objetivos img:hover {
+    filter: grayscale(0%);
+}
+/*-------------------------filarmnia video Loop infinito----------*/
+.seccion-video-independiente {
+    width: 100%;
+    padding: 20px 0;
     display: flex;
     justify-content: center;
-    gap: 60px;
+  }
+  
+  .contenedor-video {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+  }
+  
+  .contenedor-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .video-section {
+    display: flex;
+    flex-wrap: wrap; /* para que en pantallas pequeñas se acomode verticalmente */
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
+  .video-wrapper {
+    flex: 1 1 500px;
+    position: relative;
+    aspect-ratio: 16 / 9;
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    
+  }
+  
+  
+  
+
+  /*------------------Apoya- pagina--------------------*/
+  
+   .dona {
+        width: 100%;
+        background-image: url('../img/fondomariposas.png'); 
+        background-repeat: repeat;
+        background-size: auto;   
+        background-position: center;
+        padding: 50px 20px;
+      }
+    
+  .seccion-donativos {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+   
+  }
+  
+  .tarjeta-donativo {
+    display: flex;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    align-items: center;
+    gap: 40px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  }
+  
+  .tarjeta-donativo img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 16px;
+    background-color: #6ec5b8;
+  }
+  
+  .contenido {
+    flex: 1;
+  }
+  
+  .contenido h2 {
+    font-size: 24px;
+    color: #6ec5b8;
+    margin-bottom: 10px;
+  }
+  
+  .contenido p {
+    font-size: 16px;
+    margin: 4px 0;
+  }
+  
+  .botones {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    display: flex;
+    align-items: center;       
+    justify-content: center;  
+    
+   
+  }
+  
+  .botones button {
+    padding: 10px 20px;
+    border: 2px solid #6ec5b8;
+    background: none;
+    color: #6ec5b8;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease;
+  }
+  
+  .botones button:hover {
+    background: #6ec5b8;
+    color: white;
+  }
+
+
+
+/*------------------------section mapa e informacion------------*/
+.seccion-contacto {
+    background-color: #f5f9ff;
+    padding: 60px 30px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+}
+
+.contenedor-contacto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.mapa iframe {
+    width: 700px;
+    height: 500px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.info {
+    flex: 350px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.info h2 {
+    font-size: 26px;
+    color: #6ec5b8;
+    margin-bottom: 20px;
+}
+
+.info h3 {
+    font-size: 20px;
+    color: #6ec5b8;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.info p {
+    line-height: 1.6;
+    font-size: 16px;
+}
+/*-------------------------SITE MAP------------------------------------------------*/
+.site-map-container {
+    background-color: #f0f8ff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .site-map-title {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .color-mapa {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .main-link {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #007bff;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    text-align: center;
+    padding: 0.5rem 0;
+    border-radius: 8px;
+    background-color: #e6f0ff;
+    transition: background-color 0.3s;
+  }
+
+  .main-link:hover {
+    background-color: #cce0ff;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 1rem;
+  }
+
+  .site-map-list {
+    list-style-type: none;
+    padding-left: 0;
+    align-items: center;
+  }
+
+  .site-map-list li {
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .site-map-list img {
+    margin-right: 10px;
+  }
+
+  .site-map-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+
+  .site-map-link:hover {
+    color: #0056b3;
+  }
+
+
+
+
+/*========================= MEDIA QUERIES RESPONSIVE =========================*/
+
+/* Dispositivos pequeños: móviles */
+@media (max-width: 600px) {
+  #logo {
+    flex-direction: row;
+    align-items: center;
+}
+
+#menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #008080;
+    width: 60%;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+}
+
+#menu.show {
+    display: flex;
+}
+
+#hamburger {
+    display: block;
+    margin-left: auto;
+}
+
+      #menu a {
+          margin: 10px 0;
+      }
+      
+  
+    .temporadas h1 {
+        font-size: 2.0rem;
+        padding: 10px;
+      }
+      .temporadas p {
+        font-size: 1.5rem;
+        padding: 10px;
+      }
+
+
+    .carousel-wrapper {
+        display: block; 
+    }
+    .item-carousel {
+        flex: 0 0 100%;
+      }
+
+    .item-carousel img {
+        width: 100%;
+        height: auto;  
+        object-fit: contain;
+    }
+
+    .item-carousel p {
+        font-size: 18px; 
+    }
+
+    .especies {
+        gap: 40px;
+        padding: 60px 2%;
+    }
+
+    .tarjeta2 {
+        width: 45%;
+      }
+
+    .biografia {
+        flex-direction: column;
+        padding: 30px 5%;
+    }
+
+    .biografia img {
+        width: 100%;
+    }
+
+    .slider-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .slider img {
+        width: 100%;
+        height: auto;
+    }
+
+    .tarjeta-donativo {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .tarjeta-donativo img {
+        width: 100%;
+        height: auto;
+    }
+    .infoDonato {
+        flex-direction: column;
+        padding: 10px;
+      }
+    
+      .video-section iframe {
+        height: 250px;
+      }
+
+    .mapa iframe {
+        width: 100%;
+        height: 300px;
+    }
+
+    .infoDonato-container {
+      flex-direction: column; 
+      align-items: center;    
+      text-align: center;     
+      
+    }
+    .infoDonato-container img {
+      max-width: 90%;
+    }
+   
+  
+    .contenido-limpio p {
+      text-align: left; 
+      font-size: 0.95rem;
+    }
+    .contenido-limpio h1 {
+      font-size: 1.2rem;
+    }
+  
+
+      .imagen-container {
+        width: 100%;  
+    }
+    #fundaciones {
+        gap: 15px;
+      }
+    
+      #fundaciones img {
+        max-width: 100px;
+      }
+      .solo-pc {
+        display: none;
+    }
+
+    .solo-movil {
+        display: block;
+    }
+}
+
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .carousel-wrapper {
+        display: flex; 
+    }
+    #fundaciones img {
+        max-width: 120px;
+      }
+
+    .item-carousel {
+        flex: 0 0 33.33%;
+      }
+    .item-carousel img {
+        height: auto; 
+    }
+
+    .especies {
+        gap: 60px;
+        padding: 70px 4%;
+    }
+
+    .tarjeta, .tarjeta2 {
+        width: 45%;
+    }
+
+    .biografia {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .biografia img {
+        width: 80%;
+    }
+
+    .slider-container {
+        width: 90%;
+        height: auto;
+    }
+
+    .slider img {
+        width: 100%;
+        height: auto;
+    }
+
+    .mapa iframe {
+        width: 100%;
+    }
     
 }
-.personas2 h1{
-    font-size: 20px;
+/*---------Tama;o compu grande------------------------*/
+@media (min-width: 1025px) {
+    .item-carousel {
+      flex: 0 0 25%; 
+    }
+  
+    .tarjeta, .tarjeta2 {
+      width: 22%;
+    }
+  
+    .imagen-container {
+      width: calc(25% - 20px);
+    }
+  }
+
+
+  /*-----------------------Fuentes-----------------------------------------------*/
+
+
+#adelia p{
+   font-family: 'Fuente1', sans-serif;
 }
+#Hello p{
+  font-family:'Fuente2', sans-serif;
+} 
 
-.personas2 img{
-   width: 250px;
-   height: 250px;
-}
+#Gill p{
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}
 
-/*-----------------------Fundacion-----------------------*/
-#fundaciones{
-    background-color: #404040;
-    padding-top: 8%;
-    padding-bottom: 10%;
-    display: flex;
-    justify-content: center;
-    gap: 150px;
-
-}
-
-#fundaciones img{
-   width: 8%;
-   height: auto;
+.fuentes{
+  padding: 5%;
+  font-size: 1.5em;
 }
